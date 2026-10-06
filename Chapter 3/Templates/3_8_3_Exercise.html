@@ -7,7 +7,15 @@
     <body>
         <h2>Download speed</h2>
         <script>
-        
+        let fileSize=Number(prompt("Enter the file size in MB"));
+        let donwloadSpeed=Number(prompt("Enter the donwload speed in MB/s"));
+
+        let fileSizeMBit=fileSize*8;
+
+let donwloadTime=fileSizeMBit/donwloadSpeed
+
+alert("Remaining download time:"+donwloadTime.toFixed(2)+"seconds")
+
         </script>
     </body>
 </html>
