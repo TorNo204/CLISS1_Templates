@@ -9,13 +9,57 @@
     <p id="calcText" ;></p>
     <img id="imageShape" width="200" height="200">
     <script>
-        let shape = prompt("What is the shape you want to calculate the perimeter?")
+        let shape = prompt(
+            "What shape do you want to calculate the perimeter of? (rectangle or circle)"
+        );
+
         if (shape == "rectangle") {
-            //write here your code for the rectangle
+
+            // Ask for the length and width
+            let l = Number(prompt("Enter the length of the rectangle:"));
+            let w = Number(prompt("Enter the width of the rectangle:"));
+
+            // Calculate the perimeter
+            let p = 2 * l + 2 * w;
+
+            // Display the formula and result
+            document.getElementById("calcText").innerHTML =
+                "P = 2 * l + 2 * w = " + p;
+
+            // Change the text color to blue
+            document.getElementById("calcText").style.color = "blue";
+
+            // Change the image and its width
+            document.getElementById("imageShape").src =
+                "Pictures/Rectangle_Perimeter.png";
+
+            document.getElementById("imageShape").style.width = "400px";
+
         }
         else if (shape == "circle") {
-            //write here your code for the circle
+
+            // Ask for the radius
+            let r = Number(prompt("Enter the radius of the circle:"));
+
+            // Calculate the perimeter
+            let p = 2 * Math.PI * r;
+
+            // Display the formula and result
+            document.getElementById("calcText").innerHTML =
+                "P = 2 * PI * r = " + p;
+
+            // Change the text color to red
+            document.getElementById("calcText").style.color = "red";
+
+            // Change the image
+            document.getElementById("imageShape").src =
+                "Pictures/Circle_Perimeter.png";
+
         }
+        else {
+            alert("Please enter rectangle or circle.");
+        }
+
     </script>
 </body>
 </html>

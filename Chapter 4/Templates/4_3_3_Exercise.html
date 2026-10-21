@@ -8,12 +8,15 @@
         </div>
         <button id="myButton">Change layout</button>
         <script>
-        myButton.addEventListener("click",changeLayout); 
+        myButton.addEventListener("click", changeLayout);
+
         function changeLayout() {
-        //write here your code to change the css properties
-        //...
+            document.getElementById("paragraph").style.backgroundColor = "red";
+            document.getElementById("paragraph").style.fontSize = "30px";
+            document.getElementById("paragraph").style.color = "white";
+            document.getElementById("paragraph").style.border = "3px solid blue";
         }
-        </script>
+    </script>
     </body>
 </html>
 

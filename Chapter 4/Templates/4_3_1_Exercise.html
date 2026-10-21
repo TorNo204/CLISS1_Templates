@@ -5,21 +5,65 @@
         <link rel="stylesheet" href="style.css">
         <meta charset="UTF-8">
     </head>
-    <body style="text-align: center;">
-        <h1>
-            Manipulation of HTML elements
-        </h1>
-        <h2 id=imageCaption>
-            Winter Image
-        </h2>
-        <img id= "imageSeason" src="Pictures/Winter.jpg" width = "400" height="300">
-        <p id="oldText"> Click the button to display different manipulations of HTML elements.</p>
-        <button onclick="showBox()">Click me!</button>
-        <script>
-            function showBox() {
-                //Write here your code what should happen when the button is clicked!
-                //...
+    </head>
+<body style="text-align: center;">
+
+    <h1>
+        Manipulation of HTML elements
+    </h1>
+
+    <h2 id="imageCaption">
+        Winter Image
+    </h2>
+
+    <img id="imageSeason" src="Pictures/Winter.jpg"
+         width="400" height="300">
+
+    <p id="oldText">
+        Click the button to display different manipulations of HTML elements.
+    </p>
+
+    <button onclick="showBox()">Click me!</button>
+
+    <script>
+        let changed = false;
+
+        function showBox() {
+            let caption = document.getElementById("imageCaption");
+            let image = document.getElementById("imageSeason");
+            let text = document.getElementById("oldText");
+
+            if (changed == false) {
+                // a) Change the caption
+                caption.innerHTML = "Summer Image";
+                caption.style.backgroundColor = "orange";
+                caption.style.color = "red";
+                caption.style.border = "thick solid";
+
+                // b) Replace the winter image with the summer image
+                image.src = "Pictures/Summer.jpg";
+
+                // c) Change the paragraph text
+                text.innerHTML = "Summer look of HTML elements.";
+
+                changed = true;
             }
-        </script>
-    </body>
+            else {
+                // Reverse all changes
+                caption.innerHTML = "Winter Image";
+                caption.style.backgroundColor = "";
+                caption.style.color = "";
+                caption.style.border = "";
+
+                image.src = "Pictures/Winter.jpg";
+
+                text.innerHTML =
+                    "Click the button to display different manipulations of HTML elements.";
+
+                changed = false;
+            }
+        }
+    </script>
+
+</body>
 </html>

@@ -8,28 +8,34 @@
         <img id="fox" src="Pictures/Fox.png" style="position:absolute;">
         <button onclick="hide()"> Hide</button>
         <script>
+// 1) Ask the user for the dimensions
+        let width = prompt("Enter the width of the fox in pixels:");
+        let height = prompt("Enter the height of the fox in pixels:");
 
-            
-            //1) Ask the user for the dimensions
+        // Change the width and height of the fox
+        document.getElementById("fox").style.width = width + "px";
+        document.getElementById("fox").style.height = height + "px";
 
-            //change the width & height of fox accordingly
+        // 2) Change the position of the fox to the top right
+        document.getElementById("fox").style.position = "absolute";
+        document.getElementById("fox").style.right = "0";
+        document.getElementById("fox").style.top = "0";
 
-            //2) change the position of the fox to the top right
+        // 3) Ask the user for the background color
+        let color = prompt("Enter a background color (green, blue, yellow, etc.):");
 
-            //3) Ask the user for the background color
-        
-            //change the background of the image
+        // Change the background color of the page
+        document.body.style.backgroundColor = color;
 
-            //4)function to let the fox dissapear
-            function hide()
-            {
-                //code here to let the fox disappear
-                //...
-            }
+        // 4) Function to make the fox disappear
+        function hide() {
+            document.getElementById("fox").style.display = "none";
+        }
 
-            //5)create a second function to make the fox visible again
-
-
+        // 5) Function to make the fox visible again
+        function show() {
+            document.getElementById("fox").style.display = "block";
+        }
 
 
         </script>
