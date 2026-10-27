@@ -16,10 +16,43 @@
         <p id="oldText"> Click the button to display different manipulations of HTML elements.</p>
         <button onclick="showBox()">Click me!</button>
         <script>
-            function showBox() {
-                //Write here your code what should happen when the button is clicked!
-                //...
+             let changed = false;
+
+        function showBox() {
+            let caption = document.getElementById("imageCaption");
+            let image = document.getElementById("imageSeason");
+            let text = document.getElementById("oldText");
+
+            if (changed == false) {
+                // a) Change the caption
+                caption.innerHTML = "Summer Image";
+                caption.style.backgroundColor = "orange";
+                caption.style.color = "red";
+                caption.style.border = "thick solid";
+
+                // b) Replace the winter image with the summer image
+                image.src = "Pictures/Summer.jpg";
+
+                // c) Change the paragraph text
+                text.innerHTML = "Summer look of HTML elements.";
+
+                changed = true;
             }
+            else {
+                // Reverse all changes
+                caption.innerHTML = "Winter Image";
+                caption.style.backgroundColor = "";
+                caption.style.color = "";
+                caption.style.border = "";
+
+                image.src = "Pictures/Winter.jpg";
+
+                text.innerHTML =
+                    "Click the button to display different manipulations of HTML elements.";
+
+                changed = false;
+            }
+        }
         </script>
     </body>
 </html>
